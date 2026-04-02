@@ -69,3 +69,41 @@ font-size: 14px;
 ul {
 margin-top: 5px;
 }
+
+.timeline {
+position: relative;
+margin-left: 20px;
+padding-left: 20px;
+border-left: 2px solid #e5e5e5;
+}
+
+.timeline-item {
+position: relative;
+margin-bottom: 30px;
+}
+
+.timeline-item::before {
+content: "";
+position: absolute;
+left: -31px;
+top: 5px;
+width: 10px;
+height: 10px;
+background: #0366d6;
+border-radius: 50%;
+}
+
+.timeline-date {
+font-size: 14px;
+color: #666;
+margin-bottom: 5px;
+}
+
+.timeline-content h3 {
+margin: 0;
+font-size: 18px;
+}
+
+.timeline-content p {
+margin: 5px 0;
+}
