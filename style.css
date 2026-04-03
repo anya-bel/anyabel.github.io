@@ -20,8 +20,8 @@ margin-bottom: 50px;
 }
 
 .photo img {
-width: 140px;
-height: 140px;
+width: 170px;
+height: 170px;
 border-radius: 8px;
 object-fit: cover;
 }
@@ -71,39 +71,101 @@ margin-top: 5px;
 }
 
 .timeline {
-position: relative;
-margin-left: 20px;
-padding-left: 20px;
-border-left: 2px solid #e5e5e5;
+    position: relative;
+    margin-left: 0;
+    padding-left: 140px; /* space for dates */
+    border-left: 2px solid #e5e5e5; /* vertical line */
 }
 
 .timeline-item {
-position: relative;
-margin-bottom: 30px;
+    position: relative;
+    margin-bottom: 40px;
 }
 
-.timeline-item::before {
-content: "";
-position: absolute;
-left: -31px;
-top: 5px;
-width: 10px;
-height: 10px;
-background: #0366d6;
-border-radius: 50%;
-}
-
+/* Position the date outside the line */
 .timeline-date {
-font-size: 14px;
-color: #666;
-margin-bottom: 5px;
+    position: absolute;
+    left: -125px; /* same as padding-left */
+    width: 110px;
+    text-align: left;
+    font-size: 14px;
+    color: #666;
 }
 
 .timeline-content h3 {
-margin: 0;
-font-size: 18px;
+    margin: 0 0 5px 0;
+    font-size: 18px;
 }
 
-.timeline-content p {
-margin: 5px 0;
+.timeline-content p, 
+.timeline-content ul {
+    margin: 5px 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+nav a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #0366d6;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Smooth scrolling */
+html {
+scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar {
+position: sticky;
+top: 0;
+background: white;
+border-bottom: 1px solid #eee;
+z-index: 1000;
+}
+
+/* Center navigation */
+.nav-container {
+max-width: 900px;
+margin: auto;
+padding: 12px 20px;
+display: flex;
+gap: 30px;
+}
+
+/* Links */
+.navbar a {
+text-decoration: none;
+color: #444;
+font-weight: 500;
+font-size: 15px;
+padding: 6px 0;
+position: relative;
+}
+
+/* Hover underline animation */
+.navbar a::after {
+content: "";
+position: absolute;
+width: 0;
+height: 2px;
+bottom: -2px;
+left: 0;
+background-color: #0366d6;
+transition: width 0.25s ease;
+}
+
+.navbar a:hover::after {
+width: 100%;
+}
+
+.navbar a:hover {
+color: #000;
 }
